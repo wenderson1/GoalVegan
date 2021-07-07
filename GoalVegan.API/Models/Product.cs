@@ -13,6 +13,7 @@ namespace GoalVegan.API.Models
         public double Price { get; private set; }
         public string Description { get; private set; }
         public string Category { get; private set; }
+        public List<string> Photos { get; private set; }
         public int IdSeller { get; private set; }
         
 
@@ -24,7 +25,7 @@ namespace GoalVegan.API.Models
             Description = description;
             Category = category;
             IdSeller = idSeller;
-            
+            Photos = new List<string>();
         }
     }
 }

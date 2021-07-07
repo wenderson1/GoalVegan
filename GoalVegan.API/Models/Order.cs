@@ -13,6 +13,10 @@ namespace GoalVegan.API.Models
         public double Amount { get; private set; }
         public TypesPayment Payment { get; private set; }
         public OrderStatus Status { get; private set; }
+#nullable enable
+        public string? InvoiceNumber { get; private set; }
+#nullable enable
+        public string? KeyAcess { get; private set; }
         public List<Product> Products { get; private set; }
         public int IdSeller { get; private set; }
         public int IdBuyer { get; private set; }

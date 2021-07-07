@@ -8,7 +8,7 @@ namespace GoalVegan.API.Models
 {
     public class Seller : BaseEntity
     {
-        protected Seller(int id, string email, string password, string phoneNumber, string realName, string fantasyName, string cnpj, string stateRegister, double balance, string pixKey) : base()
+        protected Seller(int id, string email, string password, string phoneNumber, string realName, string fantasyName, string cnpj, string stateRegister, string pixKey) : base()
         {
             Id = id;
             Email = email;
@@ -18,7 +18,7 @@ namespace GoalVegan.API.Models
             FantasyName = fantasyName;
             CNPJ = cnpj;
             StateRegister = stateRegister;
-            Balance = balance;
+            Balance = 0;
             PixKey = pixKey;
             Products = new List<Product>();
         }
