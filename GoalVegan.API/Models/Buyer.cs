@@ -12,16 +12,18 @@ namespace GoalVegan.API.Models
         public string Email { get; private set; }
         public string Password { get; private set; }
         public string PhoneNumber { get; private set; }
+        public string CPF { get; private set; }
 #nullable enable
         public List<Card>? Cards { get; private set; }
 
 
-        protected Buyer(int id, string email, string password, string phoneNumber) : base()
+        protected Buyer(int id, string email, string password, string phoneNumber,string cpf) : base()
         {
             Id = id;
             Email = email;
             Password = password;
             PhoneNumber = phoneNumber;
+            CPF = cpf;
             Cards = new List<Card>();
         }
     }

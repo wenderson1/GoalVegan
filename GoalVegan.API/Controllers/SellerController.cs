@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GoalVegan.API.Controllers
 {
-    [Route("api/seller")]
+    [Route("api/sellers")]
     public class SellerController : ControllerBase
     {
         [HttpGet("{id}")]
@@ -44,10 +44,18 @@ namespace GoalVegan.API.Controllers
             return NoContent();
         }
 
-
+        [HttpPut("{id}/payment/{idOrder}")]
         public IActionResult PaymentSeller(int id)
         {
             return NoContent();
         }
+
+        [HttpPut("{id/login")]
+        public IActionResult Login(int id, [FromBody] SellerLoginModel login)
+        {
+            return NoContent();
+        }
+
+
     }
 }
