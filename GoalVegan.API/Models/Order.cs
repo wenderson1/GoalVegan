@@ -10,7 +10,9 @@ namespace GoalVegan.API.Models
     public class Order : BaseEntity
     {
         public int Id { get; private set; }
-        public double Amount { get; private set; }
+        public double AmountProducts { get; private set; }
+        public double PriceFreight { get; private set; }
+        public double TotalAmount { get; private set; }
         public TypesPayment Payment { get; private set; }
         public OrderStatus Status { get; private set; }
 #nullable enable
@@ -23,16 +25,19 @@ namespace GoalVegan.API.Models
         public Buyer Customer { get; private set; }
         public Seller Vendor { get; private set; }
 
-        public Order(int id, double amount, TypesPayment payment, OrderStatus status, int idSeller, int idBuyer, Buyer customer, Seller vendor) : base()
+        public Order(int id, double priceFreight, TypesPayment payment, OrderStatus status, int idSeller, int idBuyer, Buyer customer, Seller vendor) : base()
         {
             Id = id;
-            Amount = amount;
+            AmountProducts = Products.Sum(x=> x.Price);
+            PriceFreight = priceFreight;
+            TotalAmount = priceFreight + AmountProducts;
             Payment = payment;
             Status = status;
             IdSeller = idSeller;
             IdBuyer = idBuyer;
             Customer = customer;
             Vendor = vendor;
+            Products = new List<Product>();
         }
     }
 }
