@@ -1,0 +1,7 @@
+C:\Users\Wenderson\source\repos\GoalVegan\GoalVegan.API\obj\Debug\net5.0\GoalVegan.API.csprojAssemblyReference.cache
+C:\Users\Wenderson\source\repos\GoalVegan\GoalVegan.API\obj\Debug\net5.0\GoalVegan.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Wenderson\source\repos\GoalVegan\GoalVegan.API\obj\Debug\net5.0\GoalVegan.API.AssemblyInfoInputs.cache
+C:\Users\Wenderson\source\repos\GoalVegan\GoalVegan.API\obj\Debug\net5.0\GoalVegan.API.AssemblyInfo.cs
+C:\Users\Wenderson\source\repos\GoalVegan\GoalVegan.API\obj\Debug\net5.0\GoalVegan.API.csproj.CoreCompileInputs.cache
+C:\Users\Wenderson\source\repos\GoalVegan\GoalVegan.API\obj\Debug\net5.0\GoalVegan.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Wenderson\source\repos\GoalVegan\GoalVegan.API\obj\Debug\net5.0\GoalVegan.API.MvcApplicationPartsAssemblyInfo.cache
