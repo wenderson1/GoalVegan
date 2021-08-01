@@ -17,14 +17,21 @@ namespace GoalVegan.API.Models
         public List<Card>? Cards { get; private set; }
 
 
-        protected Buyer(int id, string email, string password, string phoneNumber,string cpf) : base()
+        public Buyer(string email, string password, string phoneNumber, string cpf) : base()
         {
-            Id = id;
+
             Email = email;
             Password = password;
             PhoneNumber = phoneNumber;
             CPF = cpf;
-            Cards = new List<Card>();
+        }
+
+        public void Update(string email, string password, string phoneNumber)
+        {
+            Email = email;
+            Password = password;
+            PhoneNumber = phoneNumber;
+
         }
     }
 }

@@ -1,0 +1,5 @@
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\obj\Debug\net5.0\GoalVegan.Application.csproj.AssemblyReference.cache
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\obj\Debug\net5.0\GoalVegan.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\obj\Debug\net5.0\GoalVegan.Application.AssemblyInfoInputs.cache
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\obj\Debug\net5.0\GoalVegan.Application.AssemblyInfo.cs
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\obj\Debug\net5.0\GoalVegan.Application.csproj.CoreCompileInputs.cache

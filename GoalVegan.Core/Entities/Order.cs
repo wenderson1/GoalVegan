@@ -25,18 +25,16 @@ namespace GoalVegan.API.Models
         public Buyer Customer { get; private set; }
         public Seller Vendor { get; private set; }
 
-        public Order(int id, double priceFreight, TypesPayment payment, OrderStatus status, int idSeller, int idBuyer, Buyer customer, Seller vendor) : base()
+        public Order(int id, double priceFreight, TypesPayment payment, OrderStatus status, int idSeller, int idBuyer) : base()
         {
             Id = id;
-            AmountProducts = Products.Sum(x=> x.Price);
+            AmountProducts = Products.Sum(x => x.Price);
             PriceFreight = priceFreight;
             TotalAmount = priceFreight + AmountProducts;
             Payment = payment;
             Status = status;
             IdSeller = idSeller;
             IdBuyer = idBuyer;
-            Customer = customer;
-            Vendor = vendor;
             Products = new List<Product>();
         }
     }
