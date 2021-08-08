@@ -7,9 +7,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalVegan.API", "GoalVegan.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalVegan.Core", "GoalVegan.Core\GoalVegan.Core.csproj", "{1780AADA-418F-4B13-917B-39974C4CEB6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalVegan.Infrastructure", "GoalVegan.Infrastructure\GoalVegan.Infrastructure.csproj", "{54F765F9-2704-44F5-AD51-3C71A081E76D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalVegan.Infrastructure", "GoalVegan.Infrastructure\GoalVegan.Infrastructure.csproj", "{54F765F9-2704-44F5-AD51-3C71A081E76D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalVegan.Application", "GoalVegan.Application\GoalVegan.Application.csproj", "{9D14D9EC-E7D1-4096-A46E-1D4F978C9AD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalVegan.Application", "GoalVegan.Application\GoalVegan.Application.csproj", "{9D14D9EC-E7D1-4096-A46E-1D4F978C9AD8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0BD694C9-89AC-49D1-9CC5-288724493139}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

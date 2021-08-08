@@ -16,7 +16,6 @@ namespace GoalVegan.Application.Services.Interfaces
         void Update(UpdateBuyerInputModel inputModel);
         void Delete(int id);
         int CreateOrder(CreateOrderInputModel inputModel);
-        int CreateCard(CreateCardInputModel inputModel);
     }
 
 }

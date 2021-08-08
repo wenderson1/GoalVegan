@@ -28,14 +28,6 @@ namespace GoalVegan.Application.Services.Implementations
             return buyer.Id;
         }
 
-        public int CreateCard(CreateCardInputModel inputModel)
-        {
-            var card = new Card(inputModel.CardName, inputModel.Number, inputModel.CVV, inputModel.NickName, inputModel.Types, inputModel.IdBuyer);
-            _dbContext.Cards.Add(card);
-
-            return card.Id;
-        }
-
         public int CreateOrder(CreateOrderInputModel inputModel)
         {
             throw new NotImplementedException();
@@ -49,7 +41,9 @@ namespace GoalVegan.Application.Services.Implementations
 
         public BuyerDetailsViewModel GetById(int id)
         {
-            throw new NotImplementedException();
+            var buyer = _dbContext.Buyers.SingleOrDefault(p => p.Id == id);
+            var buyerViewModel = new BuyerDetailsViewModel(buyer.Email, buyer.Email, buyer.CPF);
+            return buyerViewModel;
         }
 
         public void Update(UpdateBuyerInputModel inputModel)

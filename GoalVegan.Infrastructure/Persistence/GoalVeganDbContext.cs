@@ -10,6 +10,6 @@ namespace GoalVegan.Infrastructure.Persistence
     public class GoalVeganDbContext
     {
         public List<Buyer> Buyers { get; private set; }
-        public List<Card> Cards{ get; private set; }
+        
     }
 }

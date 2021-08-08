@@ -14,11 +14,10 @@ namespace GoalVegan.API.Models
         public string Description { get; private set; }
         public List<string> LinkImage { get; private set; }
         public string Category { get; private set; }
-        public List<string> Photos { get; private set; }
+        public Seller Seller { get; private set; }
         public int IdSeller { get; private set; }
-        
 
-        protected Product(int id, string title, double price, string description, string category, int idSeller):base()
+        public Product(int id, string title, double price, string description, string category, int idSeller) : base()
         {
             Id = id;
             Title = title;
@@ -26,7 +25,6 @@ namespace GoalVegan.API.Models
             Description = description;
             Category = category;
             IdSeller = idSeller;
-            Photos = new List<string>();
             LinkImage = new List<string>();
         }
     }
