@@ -3,6 +3,7 @@ using GoalVegan.Application.InputModel;
 using GoalVegan.Application.InputModel.Buyer;
 using GoalVegan.Application.Services.Interfaces;
 using GoalVegan.Application.ViewModel;
+using GoalVegan.Core.Entities;
 using GoalVegan.Infrastructure.Persistence;
 using System;
 using System.Collections.Generic;

@@ -1,5 +1,6 @@
 ﻿using GoalVegan.API.Models;
 using GoalVegan.API.Models.Enums;
+using GoalVegan.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GoalVegan.Application.InputModel
 {
-    class CreateSellerInputModel
+   public class CreateSellerInputModel
     {
         public string Email { get; private set; }
         public string Password { get; private set; }

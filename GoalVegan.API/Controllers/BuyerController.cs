@@ -1,9 +1,6 @@
-﻿using GoalVegan.API.Models.ViewModels.BuyerModels;
+﻿using GoalVegan.Application.InputModel;
+using GoalVegan.Application.InputModel.Buyer;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace GoalVegan.API.Controllers
 {
@@ -17,13 +14,13 @@ namespace GoalVegan.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] CreateBuyerModel createBuyer)
+        public IActionResult Post([FromBody] CreateBuyerInputModel createBuyer)
         {
             return CreatedAtAction(nameof(GetById), new { Id = 1 }, createBuyer);
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put([FromBody] UpdateBuyerModel updateBuyer)
+        public IActionResult Put([FromBody] UpdateBuyerInputModel updateBuyer)
         {
             return NoContent();
         }

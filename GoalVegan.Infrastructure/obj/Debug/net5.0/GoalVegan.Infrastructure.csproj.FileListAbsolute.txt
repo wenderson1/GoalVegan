@@ -13,3 +13,6 @@ D:\Workspace\.NET\GoalVegan\GoalVegan.Infrastructure\obj\Debug\net5.0\GoalVegan.
 D:\Workspace\.NET\GoalVegan\GoalVegan.Infrastructure\obj\Debug\net5.0\GoalVegan.Infrastructure.dll
 D:\Workspace\.NET\GoalVegan\GoalVegan.Infrastructure\obj\Debug\net5.0\ref\GoalVegan.Infrastructure.dll
 D:\Workspace\.NET\GoalVegan\GoalVegan.Infrastructure\obj\Debug\net5.0\GoalVegan.Infrastructure.pdb
+D:\Workspace\.NET\GoalVegan\GoalVegan.Infrastructure\bin\Debug\net5.0\GoalVegan.Infrastructure.runtimeconfig.json
+D:\Workspace\.NET\GoalVegan\GoalVegan.Infrastructure\bin\Debug\net5.0\GoalVegan.Infrastructure.runtimeconfig.dev.json
+D:\Workspace\.NET\GoalVegan\GoalVegan.Infrastructure\obj\Debug\net5.0\GoalVegan.Infrastructure.genruntimeconfig.cache

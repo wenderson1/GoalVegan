@@ -1,4 +1,6 @@
-﻿using GoalVegan.API.Models.SellerModels;
+﻿
+using GoalVegan.Application.InputModel;
+using GoalVegan.Application.InputModel.Seller;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -17,13 +19,13 @@ namespace GoalVegan.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] CreateSellerModel createSellerModel)
+        public IActionResult Post([FromBody] CreateSellerInputModel createSellerModel)
         {
             return CreatedAtAction(nameof(GetById), new { id = 1 }, createSellerModel);
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] UpdateSellerModel updateSellerModel)
+        public IActionResult Put(int id, [FromBody] UpdateInputSellerModel updateSellerModel)
         {
             if (updateSellerModel.Email.Length > 30)
             {

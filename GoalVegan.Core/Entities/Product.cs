@@ -1,10 +1,6 @@
-﻿using GoalVegan.API.Models.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace GoalVegan.API.Models
+namespace GoalVegan.Core.Entities
 {
     public class Product : BaseEntity
     {

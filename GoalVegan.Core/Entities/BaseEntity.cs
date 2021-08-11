@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GoalVegan.API.Models.Abstract
+namespace GoalVegan.Core.Entities
 {
     public abstract class BaseEntity
     {
@@ -12,7 +12,7 @@ namespace GoalVegan.API.Models.Abstract
 
         protected BaseEntity()
         {
-           
+
             CreatedAt = DateTime.Now;
             Active = true;
         }

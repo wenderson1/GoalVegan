@@ -2,7 +2,6 @@ D:\Workspace\.NET\GoalVegan\GoalVegan.Core\bin\Debug\net5.0\GoalVegan.Core.deps.
 D:\Workspace\.NET\GoalVegan\GoalVegan.Core\bin\Debug\net5.0\GoalVegan.Core.dll
 D:\Workspace\.NET\GoalVegan\GoalVegan.Core\bin\Debug\net5.0\ref\GoalVegan.Core.dll
 D:\Workspace\.NET\GoalVegan\GoalVegan.Core\bin\Debug\net5.0\GoalVegan.Core.pdb
-D:\Workspace\.NET\GoalVegan\GoalVegan.Core\obj\Debug\net5.0\GoalVegan.Core.csproj.AssemblyReference.cache
 D:\Workspace\.NET\GoalVegan\GoalVegan.Core\obj\Debug\net5.0\GoalVegan.Core.GeneratedMSBuildEditorConfig.editorconfig
 D:\Workspace\.NET\GoalVegan\GoalVegan.Core\obj\Debug\net5.0\GoalVegan.Core.AssemblyInfoInputs.cache
 D:\Workspace\.NET\GoalVegan\GoalVegan.Core\obj\Debug\net5.0\GoalVegan.Core.AssemblyInfo.cs

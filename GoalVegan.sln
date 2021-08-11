@@ -4,17 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalVegan.API", "GoalVegan.API\GoalVegan.API.csproj", "{1E47D88B-E1AE-450E-9F72-BE733C6369EA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1780AADA-418F-4B13-917B-39974C4CEB6B} = {1780AADA-418F-4B13-917B-39974C4CEB6B}
+		{54F765F9-2704-44F5-AD51-3C71A081E76D} = {54F765F9-2704-44F5-AD51-3C71A081E76D}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalVegan.Core", "GoalVegan.Core\GoalVegan.Core.csproj", "{1780AADA-418F-4B13-917B-39974C4CEB6B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalVegan.Infrastructure", "GoalVegan.Infrastructure\GoalVegan.Infrastructure.csproj", "{54F765F9-2704-44F5-AD51-3C71A081E76D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoalVegan.Application", "GoalVegan.Application\GoalVegan.Application.csproj", "{9D14D9EC-E7D1-4096-A46E-1D4F978C9AD8}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0BD694C9-89AC-49D1-9CC5-288724493139}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

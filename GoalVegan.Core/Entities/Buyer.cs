@@ -1,10 +1,10 @@
-﻿using GoalVegan.API.Models.Abstract;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GoalVegan.API.Models
+namespace GoalVegan.Core.Entities
 {
     public class Buyer : BaseEntity
     {
@@ -13,13 +13,12 @@ namespace GoalVegan.API.Models
         public string Password { get; private set; }
         public string PhoneNumber { get; private set; }
         public string CPF { get; private set; }
-#nullable enable
-        public List<Card>? Cards { get; private set; }
-
+        public int IdOrder { get; private set; }
+        public List<Order> Orders { get; private set; }
+       
 
         public Buyer(string email, string password, string phoneNumber, string cpf) : base()
         {
-
             Email = email;
             Password = password;
             PhoneNumber = phoneNumber;
@@ -31,7 +30,6 @@ namespace GoalVegan.API.Models
             Email = email;
             Password = password;
             PhoneNumber = phoneNumber;
-
         }
     }
 }

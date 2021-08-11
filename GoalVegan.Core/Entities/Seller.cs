@@ -1,10 +1,6 @@
-﻿using GoalVegan.API.Models.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace GoalVegan.API.Models
+namespace GoalVegan.Core.Entities
 {
     public class Seller : BaseEntity
     {
@@ -33,7 +29,10 @@ namespace GoalVegan.API.Models
         public string StateRegister { get; private set; }
         public double Balance { get; private set; }
         public string PixKey { get; private set; }
+        public int IdProduct { get; private set; }
         public List<Product> Products { get; private set; }
+        public int IdOrder { get; private set; }
+        public List<Order> Orders { get; private set; }
 
     }
 }
