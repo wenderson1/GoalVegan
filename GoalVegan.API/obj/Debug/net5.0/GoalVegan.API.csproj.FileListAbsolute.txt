@@ -70,3 +70,5 @@ D:\Workspace\.NET\GoalVegan\GoalVegan.API\obj\Debug\net5.0\GoalVegan.API.dll
 D:\Workspace\.NET\GoalVegan\GoalVegan.API\obj\Debug\net5.0\ref\GoalVegan.API.dll
 D:\Workspace\.NET\GoalVegan\GoalVegan.API\obj\Debug\net5.0\GoalVegan.API.pdb
 D:\Workspace\.NET\GoalVegan\GoalVegan.API\obj\Debug\net5.0\GoalVegan.API.genruntimeconfig.cache
+D:\Workspace\.NET\GoalVegan\GoalVegan.API\bin\Debug\net5.0\Humanizer.dll
+D:\Workspace\.NET\GoalVegan\GoalVegan.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll

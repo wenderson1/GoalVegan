@@ -43,7 +43,7 @@ namespace GoalVegan.Application.Services.Implementations
         public BuyerDetailsViewModel GetById(int id)
         {
             var buyer = _dbContext.Buyers.SingleOrDefault(p => p.Id == id);
-            var buyerViewModel = new BuyerDetailsViewModel(buyer.Email, buyer.Email, buyer.CPF);
+            var buyerViewModel = new BuyerDetailsViewModel(buyer.Email, buyer.Email, buyer.Document);
             return buyerViewModel;
         }
 

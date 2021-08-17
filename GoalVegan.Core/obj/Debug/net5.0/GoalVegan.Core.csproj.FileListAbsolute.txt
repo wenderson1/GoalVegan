@@ -9,3 +9,4 @@ D:\Workspace\.NET\GoalVegan\GoalVegan.Core\obj\Debug\net5.0\GoalVegan.Core.cspro
 D:\Workspace\.NET\GoalVegan\GoalVegan.Core\obj\Debug\net5.0\GoalVegan.Core.dll
 D:\Workspace\.NET\GoalVegan\GoalVegan.Core\obj\Debug\net5.0\ref\GoalVegan.Core.dll
 D:\Workspace\.NET\GoalVegan\GoalVegan.Core\obj\Debug\net5.0\GoalVegan.Core.pdb
+D:\Workspace\.NET\GoalVegan\GoalVegan.Core\obj\Debug\net5.0\GoalVegan.Core.csproj.AssemblyReference.cache

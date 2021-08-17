@@ -4,7 +4,7 @@ namespace GoalVegan.Core.Entities
 {
     public class Seller : BaseEntity
     {
-        protected Seller(int id, string email, string password, string phoneNumber, string realName, string fantasyName, string cnpj, string stateRegister, string pixKey) : base()
+        protected Seller(int id, string email, string password, string phoneNumber, string realName, string fantasyName, string document, string stateRegister, string pixKey) : base()
         {
             Id = id;
             Email = email;
@@ -12,7 +12,7 @@ namespace GoalVegan.Core.Entities
             PhoneNumber = phoneNumber;
             RealName = realName;
             FantasyName = fantasyName;
-            CNPJ = cnpj;
+            Document = document;
             StateRegister = stateRegister;
             Balance = 0;
             PixKey = pixKey;
@@ -25,7 +25,7 @@ namespace GoalVegan.Core.Entities
         public string PhoneNumber { get; private set; }
         public string RealName { get; private set; }
         public string FantasyName { get; private set; }
-        public string CNPJ { get; private set; }
+        public string Document { get; private set; }
         public string StateRegister { get; private set; }
         public double Balance { get; private set; }
         public string PixKey { get; private set; }
