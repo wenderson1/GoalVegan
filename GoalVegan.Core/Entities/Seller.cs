@@ -4,9 +4,8 @@ namespace GoalVegan.Core.Entities
 {
     public class Seller : BaseEntity
     {
-        protected Seller(int id, string email, string password, string phoneNumber, string realName, string fantasyName, string document, string stateRegister, string pixKey) : base()
+        public Seller(string email, string password, string phoneNumber, string realName, string fantasyName, string document, string cNPJ,string stateRegister, string pixKey) : base()
         {
-            Id = id;
             Email = email;
             Password = password;
             PhoneNumber = phoneNumber;
@@ -19,20 +18,27 @@ namespace GoalVegan.Core.Entities
             Products = new List<Product>();
         }
 
-        public int Id { get; private set; }
-        public string Email { get; private set; }
-        public string Password { get; private set; }
-        public string PhoneNumber { get; private set; }
-        public string RealName { get; private set; }
-        public string FantasyName { get; private set; }
-        public string Document { get; private set; }
-        public string StateRegister { get; private set; }
-        public double Balance { get; private set; }
-        public string PixKey { get; private set; }
-        public int IdProduct { get; private set; }
-        public List<Product> Products { get; private set; }
-        public int IdOrder { get; private set; }
-        public List<Order> Orders { get; private set; }
+        public int Id { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string PhoneNumber { get; set; }
+        public string RealName { get; set; }
+        public string FantasyName { get; set; }
+        public string Document { get; set; }
+        public string StateRegister { get; set; }
+        public double Balance { get; set; }
+        public string PixKey { get; set; }
+        public int IdProduct { get; set; }
+        public List<Product>? Products { get; set; }
+        public int IdOrder { get; set; }
+        public List<Order> Orders { get; set; }
 
+
+        public void Update(string password, string pixKey, string phoneNumber)
+        {
+            Password = password;
+            PixKey = pixKey;
+            PhoneNumber = phoneNumber;
+        }
     }
 }

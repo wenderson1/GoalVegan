@@ -26,12 +26,8 @@ namespace GoalVegan.Application.Services.Implementations
             var buyer = new Buyer(inputModel.Email, inputModel.Password, inputModel.PhoneNumber, inputModel.CPF);
 
             _dbContext.Buyers.Add(buyer);
+            _dbContext.SaveChanges();
             return buyer.Id;
-        }
-
-        public int CreateOrder(CreateOrderInputModel inputModel)
-        {
-            throw new NotImplementedException();
         }
 
         public void Delete(int id)

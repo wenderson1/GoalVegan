@@ -1,5 +1,5 @@
 ﻿using GoalVegan.Application.InputModel;
-using GoalVegan.Application.InputModel.Buyer;
+using GoalVegan.Application.InputModel.Seller;
 using GoalVegan.Application.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -9,12 +9,11 @@ using System.Threading.Tasks;
 
 namespace GoalVegan.Application.Services.Interfaces
 {
-    public interface IBuyerService
+    public interface ISellerService
     {
-        BuyerDetailsViewModel GetById(int id);
-        int Create(CreateBuyerInputModel inputModel);
-        void Update(UpdateBuyerInputModel inputModel);
+        SellerDetailsViewModel GetById(int id);
+        int Create(CreateSellerInputModel inputModel);
+        void Update(UpdateSellerInputModel inputModel);
         void Delete(int id);
     }
-
 }
