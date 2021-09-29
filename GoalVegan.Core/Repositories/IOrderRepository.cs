@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GoalVegan.Core.Repositories
 {
-    public interface IProjectRepository
+    public interface IOrderRepository
     {
     }
 }
