@@ -8,26 +8,24 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace GoalVegan.Application.Commands.SentOrder
+namespace GoalVegan.Application.Commands.DeliveredOrder
 {
-    public class SentOrderCommandHandler : IRequestHandler<SentOrderCommand,Unit>
+    public class DeliveredOrderCommandHandler : IRequestHandler<DeliveredOrderCommand, Unit>
     {
         private readonly GoalVeganDbContext _dbContext;
 
-        public SentOrderCommandHandler(GoalVeganDbContext dbContext)
+        public DeliveredOrderCommandHandler(GoalVeganDbContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        public async Task<Unit> Handle(SentOrderCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(DeliveredOrderCommand request, CancellationToken cancellationToken)
         {
             var order = await _dbContext.Orders.SingleOrDefaultAsync(o => o.Id == request.Id);
-            order.SendOrder("Código de Rastreio");
+            order.DeliveredOrder();
             await _dbContext.SaveChangesAsync();
 
             return Unit.Value;
         }
-
-        
     }
 }

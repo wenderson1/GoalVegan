@@ -14,15 +14,13 @@ namespace GoalVegan.Core.Entities
         public Seller Seller { get; private set; }
         public int IdSeller { get; private set; }
 
-        public Product(int id, string title, double price, string description, string category, int idSeller) : base()
+        public Product(string title, double price, string description, string category, int idSeller) : base()
         {
-            Id = id;
             Title = title;
             Price = price;
             Description = description;
             Category = category;
             IdSeller = idSeller;
-            
         }
     }
 }
