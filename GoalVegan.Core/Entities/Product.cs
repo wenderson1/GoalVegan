@@ -22,5 +22,13 @@ namespace GoalVegan.Core.Entities
             Category = category;
             IdSeller = idSeller;
         }
+
+        public void Update(string title, double price, string description, string linkImage)
+        {
+            Title = title;
+            Price = price;
+            Description = description;
+            LinkImage = linkImage;
+        }
     }
 }

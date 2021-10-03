@@ -14,7 +14,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Queries\" />
+    <Folder Include="Queries\GetProduct\" />
+    <Folder Include="Queries\GetOrdersBySeller\" />
+    <Folder Include="Queries\GetOrdersByBuyer\" />
+    <Folder Include="Queries\GetSeller\" />
+    <Folder Include="Queries\GetProductsBySeller\" />
+    <Folder Include="Queries\GetUser\" />
   </ItemGroup>
 
 </Project>

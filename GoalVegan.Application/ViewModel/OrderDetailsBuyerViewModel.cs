@@ -9,13 +9,31 @@ using System.Threading.Tasks;
 
 namespace GoalVegan.Application.ViewModel
 {
-    class OrderDetailsBuyerViewModel
+   public class OrderDetailsBuyerViewModel
     {
+        public OrderDetailsBuyerViewModel(double amountProducts, double priceFreight, double totalAmount, TypesPayment payment, OrderStatus status, string invoiceNumber, string keyAcess, List<Product> products, int idSeller, Seller vendor)
+        {
+            AmountProducts = amountProducts;
+            PriceFreight = priceFreight;
+            TotalAmount = totalAmount;
+            Payment = payment;
+            Status = status;
+            InvoiceNumber = invoiceNumber;
+            KeyAcess = keyAcess;
+            Products = products;
+            IdSeller = idSeller;
+            Vendor = vendor;
+        }
+
         public double AmountProducts { get; private set; }
         public double PriceFreight { get; private set; }
         public double TotalAmount { get; private set; }
         public TypesPayment Payment { get; private set; }
+        public OrderStatus Status { get; private set; }
+        public string? InvoiceNumber { get; private set; }
+        public string? KeyAcess { get; private set; }
         public List<Product> Products { get; private set; }
         public int IdSeller { get; private set; }
+        public Seller Vendor { get; private set; }
     }
 }
