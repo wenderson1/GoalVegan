@@ -9,6 +9,7 @@ namespace GoalVegan.Application.InputModel.Seller
     public class UpdateSellerInputModel
     {
         public int Id { get; private set; }
+        public string Email { get; private set; }
         public string Password { get; private set; }
         public string PhoneNumber { get; private set; }
         public string PixKey { get; private set; }

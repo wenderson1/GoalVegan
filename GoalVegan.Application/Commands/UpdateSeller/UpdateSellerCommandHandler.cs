@@ -13,6 +13,12 @@ namespace GoalVegan.Application.Commands.UpdateSeller
     class UpdateSellerCommandHandler : IRequestHandler<UpdateSellerCommand, Unit>
     {
         private readonly GoalVeganDbContext _dbContext;
+
+        public UpdateSellerCommandHandler(GoalVeganDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
         public async Task<Unit> Handle(UpdateSellerCommand request, CancellationToken cancellationToken)
         {
             var seller = await _dbContext.Sellers.SingleOrDefaultAsync(s => s.Id == request.Id);

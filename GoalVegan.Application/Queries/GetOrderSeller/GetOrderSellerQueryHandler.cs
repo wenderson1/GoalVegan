@@ -14,6 +14,12 @@ namespace GoalVegan.Application.Queries.GetOrderSeller
     public class GetOrderSellerQueryHandler : IRequestHandler<GetOrderSellerQuery, OrderDetailsSellerViewModel>
     {
         private readonly GoalVeganDbContext _dbContext;
+
+        public GetOrderSellerQueryHandler(GoalVeganDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
         public async Task<OrderDetailsSellerViewModel> Handle(GetOrderSellerQuery request, CancellationToken cancellationToken)
         {
             var order = await _dbContext.Orders

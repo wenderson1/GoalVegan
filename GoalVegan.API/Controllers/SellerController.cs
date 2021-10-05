@@ -25,7 +25,7 @@ namespace GoalVegan.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] UpdateInputSellerModel updateSellerModel)
+        public IActionResult Put(int id, [FromBody] UpdateSellerInputModel updateSellerModel)
         {
             if (updateSellerModel.Email.Length > 30)
             {

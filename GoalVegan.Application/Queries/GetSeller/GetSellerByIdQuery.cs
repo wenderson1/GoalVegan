@@ -12,7 +12,7 @@ namespace GoalVegan.Application.Queries.GetSeller
     {
         public int Id{ get; private set; }
 
-        public GetSellerByIdQuery(int id)
+        public GetSellerByIdQuery(int id )
         {
             Id = id;
         }

@@ -4,6 +4,18 @@ namespace GoalVegan.Core.Entities
 {
     public class Seller : BaseEntity
     {
+        public Seller(string email, string password, string phoneNumber, string realName, string fantasyName, string document, string stateRegister, string pixKey)
+        {
+            Email = email;
+            Password = password;
+            PhoneNumber = phoneNumber;
+            RealName = realName;
+            FantasyName = fantasyName;
+            Document = document;
+            StateRegister = stateRegister;
+            PixKey = pixKey;
+        }
+
         public Seller(string email, string password, string phoneNumber, string realName, string fantasyName, string document, string cNPJ,string stateRegister, string pixKey) : base()
         {
             Email = email;
