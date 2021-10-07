@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoalVegan.Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace GoalVegan.Core.Repositories
 {
     public interface IOrderRepository
     {
+        Task<Order> GetOrderById(int id);
     }
 }

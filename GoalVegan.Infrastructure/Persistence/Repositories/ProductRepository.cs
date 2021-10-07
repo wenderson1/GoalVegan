@@ -1,16 +1,16 @@
 ﻿using GoalVegan.Core.Entities;
+using GoalVegan.Core.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GoalVegan.Core.Repositories
+namespace GoalVegan.Infrastructure.Persistence.Repositories
 {
-    public interface IProductRepository
+    public class ProductRepository:IProductRepository
     {
         Task<List<Product>> GetAllProducts();
-        Task<Product> GetProductById(int id); 
-
+        Task<Product> GetProductById(int id);
     }
 }
