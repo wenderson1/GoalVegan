@@ -1,4 +1,5 @@
 ﻿using GoalVegan.Application.ViewModel;
+using GoalVegan.Core.Repositories;
 using GoalVegan.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -13,16 +14,13 @@ namespace GoalVegan.Application.Queries.GetSeller
 {
     public class GetSellerByIdQueryHandler : IRequestHandler<GetSellerByIdQuery, SellerDetailsViewModel>
     {
-        private readonly GoalVeganDbContext _dbContext;
-
-        public GetSellerByIdQueryHandler(GoalVeganDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
+        private readonly ISellerRepository _sellerRepository;
 
         public async Task<SellerDetailsViewModel> Handle(GetSellerByIdQuery request, CancellationToken cancellationToken)
         {
-            var seller = await _dbContext.Sellers.SingleOrDefaultAsync(b => b.Id == request.Id);
+            var seller = await _sellerRepository.GetSellerById(request.Id);
+
+            if (seller == null) return null;
 
             return new SellerDetailsViewModel(seller.Email, seller.PhoneNumber, seller.RealName, seller.FantasyName, seller.Document, seller.StateRegister, seller.Balance, seller.PixKey);
         }

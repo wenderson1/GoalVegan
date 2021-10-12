@@ -1,4 +1,5 @@
 ﻿using GoalVegan.Application.ViewModel;
+using GoalVegan.Core.Repositories;
 using GoalVegan.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -13,19 +14,19 @@ namespace GoalVegan.Application.Queries.GetAllProducts
 {
     public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, List<ProductViewModel>>
     {
-        private readonly GoalVeganDbContext _dbContext;
+        private readonly IProductRepository _productRepository;
 
-        public GetAllProductsQueryHandler(GoalVeganDbContext dbContext)
+        public GetAllProductsQueryHandler(IProductRepository productRepository)
         {
-            _dbContext = dbContext;
+            _productRepository = productRepository;
         }
 
         public async Task<List<ProductViewModel>> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
         {
-            var products = await _dbContext.Products.ToListAsync();
+            var products = await _productRepository.GetAllProducts();
 
             var productsViewModel = products
-                .Select(p => new ProductViewModel(p.Title, p.Price, p.Description, p.LinkImage, p.Category))
+                .Select(p => new ProductViewModel(p.Title, p.Price, p.Description, p.LinkImage, p.Category, p.Seller))
                 .ToList();
 
             return productsViewModel;

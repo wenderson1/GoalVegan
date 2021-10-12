@@ -11,11 +11,7 @@ namespace GoalVegan.Application.Queries.GetProductsBySeller
 {
     public class GetProductsBySellerQuery : IRequest<List<Product>>
     {
-
-
         public int IdSeller { get; private set; }
-
-
 
     }
 }

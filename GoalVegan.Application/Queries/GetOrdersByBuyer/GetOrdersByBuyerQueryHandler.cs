@@ -1,4 +1,5 @@
 ﻿using GoalVegan.Core.Entities;
+using GoalVegan.Core.Repositories;
 using GoalVegan.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -13,16 +14,16 @@ namespace GoalVegan.Application.Queries.GetOrdersByBuyer
 {
     public class GetOrdersByBuyerQueryHandler : IRequestHandler<GetOrdersByBuyerQuery, List<Order>>
     {
-        private readonly GoalVeganDbContext _dbContext;
+        private readonly IBuyerRepository _buyerRepository;
 
-        public GetOrdersByBuyerQueryHandler(GoalVeganDbContext dbContext)
+        public GetOrdersByBuyerQueryHandler(IBuyerRepository buyerRepository)
         {
-            _dbContext = dbContext;
+            _buyerRepository = buyerRepository;
         }
 
         public async Task<List<Order>> Handle(GetOrdersByBuyerQuery request, CancellationToken cancellationToken)
         {
-            return await _dbContext.Orders.Where(o => o.IdBuyer == request.IdBuyer).ToListAsync();
+            return await _buyerRepository.GetOrdersByBuyer(request.IdBuyer);
         }
     }
 }

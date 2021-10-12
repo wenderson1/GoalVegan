@@ -1,4 +1,5 @@
 ﻿using GoalVegan.Application.ViewModel;
+using GoalVegan.Core.Repositories;
 using GoalVegan.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -13,21 +14,20 @@ namespace GoalVegan.Application.Queries.GetOrderSeller
 {
     public class GetOrderSellerQueryHandler : IRequestHandler<GetOrderSellerQuery, OrderDetailsSellerViewModel>
     {
-        private readonly GoalVeganDbContext _dbContext;
+        private readonly IOrderRepository _orderRepository;
 
-        public GetOrderSellerQueryHandler(GoalVeganDbContext dbContext)
+        public GetOrderSellerQueryHandler(IOrderRepository orderRepository)
         {
-            _dbContext = dbContext;
+            _orderRepository = orderRepository;
         }
 
         public async Task<OrderDetailsSellerViewModel> Handle(GetOrderSellerQuery request, CancellationToken cancellationToken)
         {
-            var order = await _dbContext.Orders
-                .Include(b => b.Customer)
-                .Include(s => s.Vendor)
-                .SingleOrDefaultAsync(o => o.Id == request.Id);
+            var order = await _orderRepository.GetOrderById(request.Id);
 
-            var orderDetailsSellerViewModel = new OrderDetailsSellerViewModel(order.AmountProducts, order.PriceFreight,order.TotalAmount, order.Payment,
+            if (order == null) return null;
+
+            var orderDetailsSellerViewModel = new OrderDetailsSellerViewModel(order.AmountProducts, order.PriceFreight, order.TotalAmount, order.Payment,
                 order.Status, order.InvoiceNumber, order.KeyAcess, order.Products, order.IdBuyer, order.Customer);
 
             return orderDetailsSellerViewModel;

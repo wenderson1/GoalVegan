@@ -9,13 +9,14 @@ namespace GoalVegan.Application.ViewModel
 {
     public class ProductViewModel
     {
-        public ProductViewModel(string title, double price, string description, string linkImage, string category)
+        public ProductViewModel(string title, double price, string description, string linkImage, string category,Seller seller)
         {
             Title = title;
             Price = price;
             Description = description;
             LinkImage = linkImage;
             Category = category;
+            Seller = seller;
         }
 
         public ProductViewModel(string title, double price, string description, string linkImage, string category, Seller seller, int idSeller)

@@ -1,5 +1,6 @@
 ﻿using GoalVegan.Application.ViewModel;
 using GoalVegan.Core.Entities;
+using GoalVegan.Core.Repositories;
 using GoalVegan.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -14,17 +15,17 @@ namespace GoalVegan.Application.Queries.GetProductsBySeller
 {
     public class GetProductsBySellerQueryHandler : IRequestHandler<GetProductsBySellerQuery, List<Product>>
     {
-        private readonly GoalVeganDbContext _dbContext;
+        private readonly ISellerRepository _sellerRepository;
 
-        public GetProductsBySellerQueryHandler(GoalVeganDbContext dbContext)
+        public GetProductsBySellerQueryHandler(ISellerRepository sellerRepository)
         {
-            _dbContext = dbContext;
+            _sellerRepository = sellerRepository;
         }
 
-        public async  Task<List<Product>> Handle(GetProductsBySellerQuery request, CancellationToken cancellationToken)
+        public async Task<List<Product>> Handle(GetProductsBySellerQuery request, CancellationToken cancellationToken)
         {
-            var products = await _dbContext.Products.Where(p => p.IdSeller == request.IdSeller).ToListAsync();
-            
+            var products = await _sellerRepository.GetProductsBySeller(request.IdSeller);
+
             return products;
         }
 

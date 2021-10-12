@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GoalVegan.Application.Queries.GetOrder
 {
-    public class GetOrderBuyerQuery:IRequest<OrderDetailsBuyerViewModel>
+    public class GetOrderBuyerQuery:IRequest<List<OrderDetailsBuyerViewModel>>
     {
         public int Id { get; private set; }
 
