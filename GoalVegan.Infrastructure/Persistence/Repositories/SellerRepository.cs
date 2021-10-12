@@ -1,5 +1,6 @@
 ﻿using GoalVegan.Core.Entities;
 using GoalVegan.Core.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,19 +18,19 @@ namespace GoalVegan.Infrastructure.Persistence.Repositories
             _dbContext = dbContext;
         }
 
-        public Task<List<Order>> GetOrdersBySeller()
+        public async Task<List<Order>> GetOrdersBySeller(int idSeller)
         {
-            throw new NotImplementedException();
+            return await _dbContext.Orders.Where(o => o.IdSeller == idSeller).ToListAsync();
         }
 
-        public Task<List<Product>> GetProductsBySeller()
+        public async Task<List<Product>> GetProductsBySeller(int sellerId)
         {
-            throw new NotImplementedException();
+            return await _dbContext.Products.Where(p => p.IdSeller == sellerId).ToListAsync();
         }
 
-        public Task<Seller> GetSellerById()
+        public async Task<Seller> GetSellerById(int id)
         {
-            throw new NotImplementedException();
+            return await _dbContext.Sellers.FirstOrDefaultAsync(s => s.Id == id);
         }
     }
 }

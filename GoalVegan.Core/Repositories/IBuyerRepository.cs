@@ -9,7 +9,7 @@ namespace GoalVegan.Core.Repositories
 {
     public interface IBuyerRepository
     {
-        Task<Buyer> GetById();
-        Task<List<Order>> GetOrdersByBuyer(int idBuyer)
+        Task<Buyer> GetById(int id);
+        Task<List<Order>> GetOrdersByBuyer(int idBuyer);
     }
 }

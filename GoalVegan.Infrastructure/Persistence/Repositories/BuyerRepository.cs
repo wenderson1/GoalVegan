@@ -1,4 +1,6 @@
-﻿using GoalVegan.Core.Repositories;
+﻿using GoalVegan.Core.Entities;
+using GoalVegan.Core.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +11,21 @@ namespace GoalVegan.Infrastructure.Persistence.Repositories
 {
     public class BuyerRepository:IBuyerRepository
     {
+        private readonly GoalVeganDbContext _dbContext;
+
+        public BuyerRepository(GoalVeganDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
+        public async Task<Buyer> GetById(int id)
+        {
+            return await _dbContext.Buyers.SingleOrDefaultAsync(b => b.Id == id);
+        }
+
+        public async Task<List<Order>> GetOrdersByBuyer(int idBuyer)
+        {
+            return await _dbContext.Orders.Where(o => o.IdBuyer == idBuyer).ToListAsync();
+        }
     }
 }
