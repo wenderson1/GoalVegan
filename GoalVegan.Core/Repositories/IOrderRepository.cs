@@ -1,4 +1,5 @@
-﻿using GoalVegan.Core.Entities;
+﻿using GoalVegan.API.Models.Enums;
+using GoalVegan.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,10 @@ namespace GoalVegan.Core.Repositories
     public interface IOrderRepository
     {
         Task<Order> GetOrderById(int id);
+        Task CreateOrderAsync(double priceFreight, TypesPayment payment, int idSeller, int idBuyer);
+        Task BilledOrderAsync(int id, string invoiceNumber, string KeyAcess);
+        Task CancelOrderAsync(int id);
+        Task SentOrderAsync(int id);
+        Task DeliveredOrder(int id);
     }
 }

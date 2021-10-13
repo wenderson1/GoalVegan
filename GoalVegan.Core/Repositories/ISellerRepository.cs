@@ -12,5 +12,8 @@ namespace GoalVegan.Core.Repositories
         Task<List<Order>> GetOrdersBySeller(int sellerId);
         Task<List<Product>> GetProductsBySeller(int sellerId);
         Task<Seller> GetSellerById(int id);
+        Task AddSellerAsync();
+        Task UpdateSellerAsync();
+        Task DeleteSellerAsync();
     }
 }

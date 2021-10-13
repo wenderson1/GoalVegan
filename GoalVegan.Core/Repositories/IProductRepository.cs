@@ -10,7 +10,10 @@ namespace GoalVegan.Core.Repositories
     public interface IProductRepository
     {
         Task<List<Product>> GetAllProducts();
-        Task<Product> GetProductById(int id); 
+        Task<Product> GetProductById(int id);
+        Task AddProduct();
+        Task UpdateProductAsync();
+        Task DeleteProductAsync();
 
     }
 }

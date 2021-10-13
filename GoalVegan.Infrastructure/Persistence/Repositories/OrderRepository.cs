@@ -1,4 +1,5 @@
-﻿using GoalVegan.Core.Entities;
+﻿using GoalVegan.API.Models.Enums;
+using GoalVegan.Core.Entities;
 using GoalVegan.Core.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -18,9 +19,34 @@ namespace GoalVegan.Infrastructure.Persistence.Repositories
             _dbContext = dbContext;
         }
 
+        public Task BilledOrderAsync(int id, string invoiceNumber, string KeyAcess)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task CancelOrderAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task CreateOrderAsync(double priceFreight, TypesPayment payment, int idSeller, int idBuyer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeliveredOrder(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Order> GetOrderById(int id)
         {
             return await _dbContext.Orders.FirstOrDefaultAsync(o => o.Id == id);
+        }
+
+        public Task SentOrderAsync(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

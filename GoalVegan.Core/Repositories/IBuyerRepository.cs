@@ -11,5 +11,7 @@ namespace GoalVegan.Core.Repositories
     {
         Task<Buyer> GetById(int id);
         Task<List<Order>> GetOrdersByBuyer(int idBuyer);
+        Task AddBuyerAsync();
+        Task UpdateBuyerAsync();
     }
 }
