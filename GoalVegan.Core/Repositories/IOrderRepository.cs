@@ -11,7 +11,7 @@ namespace GoalVegan.Core.Repositories
     public interface IOrderRepository
     {
         Task<Order> GetOrderById(int id);
-        Task CreateOrderAsync(double priceFreight, TypesPayment payment, int idSeller, int idBuyer);
+        Task AddOrderAsync(Order order);
         Task BilledOrderAsync(int id, string invoiceNumber, string KeyAcess);
         Task CancelOrderAsync(int id);
         Task SentOrderAsync(int id);

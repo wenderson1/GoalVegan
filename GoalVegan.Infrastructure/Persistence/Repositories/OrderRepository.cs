@@ -29,7 +29,7 @@ namespace GoalVegan.Infrastructure.Persistence.Repositories
             throw new NotImplementedException();
         }
 
-        public Task CreateOrderAsync(double priceFreight, TypesPayment payment, int idSeller, int idBuyer)
+        public Task AddOrderAsync(double priceFreight, TypesPayment payment, int idSeller, int idBuyer)
         {
             throw new NotImplementedException();
         }
