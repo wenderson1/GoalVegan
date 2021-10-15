@@ -1,4 +1,5 @@
-﻿using GoalVegan.Infrastructure.Persistence;
+﻿using GoalVegan.Core.Repositories;
+using GoalVegan.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
@@ -8,19 +9,17 @@ namespace GoalVegan.Application.Commands.UpdateBuyer
 {
     public class UpdateBuyerCommandHandler : IRequestHandler<UpdateBuyerCommand, Unit>
     {
-        private readonly GoalVeganDbContext _dbContext;
+        private readonly IBuyerRepository _buyerRepository;
 
-        public UpdateBuyerCommandHandler(GoalVeganDbContext dbContext)
+        public UpdateBuyerCommandHandler(IBuyerRepository buyerRepository)
         {
-            _dbContext = dbContext;
+            _buyerRepository = buyerRepository;
         }
 
         public async Task<Unit> Handle(UpdateBuyerCommand request, CancellationToken cancellationToken)
         {
-            var buyer = await _dbContext.Buyers.SingleOrDefaultAsync(b => b.Id == request.Id);
-            buyer.Update(request.Email, request.Password, request.PhoneNumber);
-            await _dbContext.SaveChangesAsync();
-
+            var buyer = await _buyerRepository.GetById(request.Id);
+            await _buyerRepository.UpdateBuyerAsync(buyer);
             return Unit.Value;
         }
     }

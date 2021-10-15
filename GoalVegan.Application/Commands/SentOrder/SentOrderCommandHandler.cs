@@ -1,4 +1,5 @@
-﻿using GoalVegan.Infrastructure.Persistence;
+﻿using GoalVegan.Core.Repositories;
+using GoalVegan.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,18 +13,18 @@ namespace GoalVegan.Application.Commands.SentOrder
 {
     public class SentOrderCommandHandler : IRequestHandler<SentOrderCommand,Unit>
     {
-        private readonly GoalVeganDbContext _dbContext;
+        private readonly IOrderRepository _orderRepository;
 
-        public SentOrderCommandHandler(GoalVeganDbContext dbContext)
+        public SentOrderCommandHandler(IOrderRepository orderRepository)
         {
-            _dbContext = dbContext;
+            _orderRepository = orderRepository;
         }
 
         public async Task<Unit> Handle(SentOrderCommand request, CancellationToken cancellationToken)
         {
-            var order = await _dbContext.Orders.SingleOrDefaultAsync(o => o.Id == request.Id);
-            order.SendOrder("Código de Rastreio");
-            await _dbContext.SaveChangesAsync();
+            var order = await _orderRepository.GetOrderById(request.Id);
+           await _orderRepository.SentOrderAsync(order);
+            
 
             return Unit.Value;
         }

@@ -13,5 +13,6 @@ namespace GoalVegan.Core.Repositories
         Task<List<Order>> GetOrdersByBuyer(int idBuyer);
         Task AddBuyerAsync(Buyer buyer);
         Task UpdateBuyerAsync(Buyer buyer);
+        Task SaveChangesAsync();
     }
 }

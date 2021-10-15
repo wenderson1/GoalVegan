@@ -13,6 +13,6 @@ namespace GoalVegan.Core.Repositories
         Task<Product> GetProductById(int id);
         Task AddProduct(Product product);
         Task UpdateProductAsync(Product product);
-        Task DeleteProductAsync(int id);
+        Task SaveChangesAsync();
     }
 }

@@ -1,4 +1,5 @@
-﻿using GoalVegan.Infrastructure.Persistence;
+﻿using GoalVegan.Core.Repositories;
+using GoalVegan.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,18 +13,18 @@ namespace GoalVegan.Application.Commands.DeleteSeller
 {
     public class DeleteSellerCommnadHandler : IRequestHandler<DeleteSellerCommand, Unit>
     {
-        private readonly GoalVeganDbContext _dbContext;
+        private readonly ISellerRepository _sellerRepository;
 
-        public DeleteSellerCommnadHandler(GoalVeganDbContext dbContext)
+        public DeleteSellerCommnadHandler(ISellerRepository sellerRepository)
         {
-            _dbContext = dbContext;
+            _sellerRepository = sellerRepository;
         }
 
         public async Task<Unit> Handle(DeleteSellerCommand request, CancellationToken cancellationToken)
         {
-            var seller = await _dbContext.Sellers.SingleOrDefaultAsync(s => s.Id == request.Id);
+            var seller = await _sellerRepository.GetSellerById(request.Id);
             seller.DeactiveAccount();
-            await _dbContext.SaveChangesAsync();
+            await _sellerRepository.SaveChangesAsync();
 
             return Unit.Value;
         }

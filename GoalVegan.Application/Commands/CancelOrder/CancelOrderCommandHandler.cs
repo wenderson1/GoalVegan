@@ -1,4 +1,5 @@
-﻿using GoalVegan.Infrastructure.Persistence;
+﻿using GoalVegan.Core.Repositories;
+using GoalVegan.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,18 +13,19 @@ namespace GoalVegan.Application.Commands.CancelOrder
 {
     public class CancelOrderCommandHandler : IRequestHandler<CancelOrderCommand, Unit>
     {
-        private readonly GoalVeganDbContext _dbContext;
+        private readonly IOrderRepository _orderRepository;
 
-        public CancelOrderCommandHandler(GoalVeganDbContext dbContext)
+        public CancelOrderCommandHandler(IOrderRepository orderRepository)
         {
-            _dbContext = dbContext;
+            _orderRepository = orderRepository;
         }
 
         public async Task<Unit> Handle(CancelOrderCommand request, CancellationToken cancellationToken)
         {
-            var order = await _dbContext.Orders.SingleOrDefaultAsync(o => o.Id == request.Id);
-            order.CancelOrder();
-            await _dbContext.SaveChangesAsync();
+            var order = await _orderRepository.GetOrderById(request.Id);
+          
+            await _orderRepository.CancelOrderAsync(order);
+            
 
             return Unit.Value;
         }

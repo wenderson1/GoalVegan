@@ -19,24 +19,28 @@ namespace GoalVegan.Infrastructure.Persistence.Repositories
             _dbContext = dbContext;
         }
 
-        public Task BilledOrderAsync(int id, string invoiceNumber, string KeyAcess)
+        public async Task AddOrderAsync(Order order)
         {
-            throw new NotImplementedException();
+            await _dbContext.Orders.AddAsync(order);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public Task CancelOrderAsync(int id)
+        public async Task BilledOrderAsync(Order order)
         {
-            throw new NotImplementedException();
+            order.BilledOrder(order.InvoiceNumber, order.KeyAcess);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public Task AddOrderAsync(double priceFreight, TypesPayment payment, int idSeller, int idBuyer)
+        public async Task CancelOrderAsync(Order order)
         {
-            throw new NotImplementedException();
+            order.CancelOrder();
+            await _dbContext.SaveChangesAsync();
         }
 
-        public Task DeliveredOrder(int id)
+        public async Task DeliveredOrder(Order order)
         {
-            throw new NotImplementedException();
+            order.DeliveredOrder();
+            await _dbContext.SaveChangesAsync();
         }
 
         public async Task<Order> GetOrderById(int id)
@@ -44,9 +48,10 @@ namespace GoalVegan.Infrastructure.Persistence.Repositories
             return await _dbContext.Orders.FirstOrDefaultAsync(o => o.Id == id);
         }
 
-        public Task SentOrderAsync(int id)
+        public async Task SentOrderAsync(Order order)
         {
-            throw new NotImplementedException();
+            order.SendOrder("21312312");
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

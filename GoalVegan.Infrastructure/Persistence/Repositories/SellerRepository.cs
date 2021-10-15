@@ -18,6 +18,11 @@ namespace GoalVegan.Infrastructure.Persistence.Repositories
             _dbContext = dbContext;
         }
 
+        public Task AddSellerAsync(Seller seller)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<List<Order>> GetOrdersBySeller(int idSeller)
         {
             return await _dbContext.Orders.Where(o => o.IdSeller == idSeller).ToListAsync();
@@ -31,6 +36,17 @@ namespace GoalVegan.Infrastructure.Persistence.Repositories
         public async Task<Seller> GetSellerById(int id)
         {
             return await _dbContext.Sellers.FirstOrDefaultAsync(s => s.Id == id);
+        }
+
+        public async Task SaveChangesAsync()
+        {
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task UpdateSellerAsync(Seller seller)
+        {
+            seller.Update(seller.PixKey, seller.PixKey, seller.PhoneNumber);
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

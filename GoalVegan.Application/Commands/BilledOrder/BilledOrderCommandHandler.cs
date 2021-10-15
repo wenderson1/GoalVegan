@@ -13,18 +13,18 @@ namespace GoalVegan.Application.Commands.CreateSeller
 {
     public class BilledOrderCommandHandler : IRequestHandler<BilledOrderCommand, Unit>
     {
-        private readonly GoalVeganDbContext _dbContext;
+        private readonly IOrderRepository _orderRepository;
 
-        public BilledOrderCommandHandler(GoalVeganDbContext dbContext)
+        public BilledOrderCommandHandler(IOrderRepository orderRepository)
         {
-            _dbContext = dbContext;
+            _orderRepository = orderRepository;
         }
+
 
         public async Task<Unit> Handle(BilledOrderCommand request, CancellationToken cancellationToken)
         {
-            var order = await _dbContext.Orders.SingleOrDefaultAsync(o => o.Id == request.Id);
-            order.BilledOrder(request.InvoiceNumber, request.KeyAcess);
-            await _dbContext.SaveChangesAsync();
+            var order = await _orderRepository.GetOrderById(request.Id);
+            await _orderRepository.BilledOrderAsync(order);
 
             return Unit.Value;
         }

@@ -9,13 +9,19 @@ using System.Threading.Tasks;
 
 namespace GoalVegan.Infrastructure.Persistence.Repositories
 {
-    public class ProductRepository:IProductRepository
+    public class ProductRepository : IProductRepository
     {
         private readonly GoalVeganDbContext _dbContext;
 
         public ProductRepository(GoalVeganDbContext dbContext)
         {
             _dbContext = dbContext;
+        }
+
+        public async Task AddProduct(Product product)
+        {
+            await _dbContext.AddAsync(product);
+            await _dbContext.SaveChangesAsync();
         }
 
         public async Task<List<Product>> GetAllProducts()
@@ -26,6 +32,16 @@ namespace GoalVegan.Infrastructure.Persistence.Repositories
         public async Task<Product> GetProductById(int id)
         {
             return await _dbContext.Products.SingleOrDefaultAsync(p => p.Id == id);
+        }
+
+        public async Task SaveChangesAsync()
+        {
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public Task UpdateProductAsync(Product product)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -12,9 +12,9 @@ namespace GoalVegan.Core.Repositories
     {
         Task<Order> GetOrderById(int id);
         Task AddOrderAsync(Order order);
-        Task BilledOrderAsync(int id, string invoiceNumber, string KeyAcess);
-        Task CancelOrderAsync(int id);
-        Task SentOrderAsync(int id);
-        Task DeliveredOrder(int id);
+        Task BilledOrderAsync(Order order);
+        Task CancelOrderAsync(Order order);
+        Task SentOrderAsync(Order order);
+        Task DeliveredOrder(Order order);
     }
 }

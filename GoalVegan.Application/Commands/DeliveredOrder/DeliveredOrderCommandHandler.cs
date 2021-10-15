@@ -1,4 +1,5 @@
-﻿using GoalVegan.Infrastructure.Persistence;
+﻿using GoalVegan.Core.Repositories;
+using GoalVegan.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,18 +13,17 @@ namespace GoalVegan.Application.Commands.DeliveredOrder
 {
     public class DeliveredOrderCommandHandler : IRequestHandler<DeliveredOrderCommand, Unit>
     {
-        private readonly GoalVeganDbContext _dbContext;
+        private readonly IOrderRepository _orderRepository;
 
-        public DeliveredOrderCommandHandler(GoalVeganDbContext dbContext)
+        public DeliveredOrderCommandHandler(IOrderRepository orderRepository)
         {
-            _dbContext = dbContext;
+            _orderRepository = orderRepository
         }
 
         public async Task<Unit> Handle(DeliveredOrderCommand request, CancellationToken cancellationToken)
         {
-            var order = await _dbContext.Orders.SingleOrDefaultAsync(o => o.Id == request.Id);
-            order.DeliveredOrder();
-            await _dbContext.SaveChangesAsync();
+            var order = await _orderRepository.GetOrderById(request.Id);
+            order.DeliveredOrder()
 
             return Unit.Value;
         }
