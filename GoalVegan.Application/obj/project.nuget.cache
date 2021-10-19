@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "tFXGvlQMDhDbNcn5zyvRywQi8zvGB+/tTdXb6AIztwXMOic0ICqWsXTDFvDXDCDPWZouMRkMFMBpvkgRjsQ3TA==",
+  "dgSpecHash": "Bjv8Zu7A9CXSygTT49ujhRFA+i9sEgeQI0jx1OG05ggN9GpecBQbDd1sa+71PjVuE8RtCwLuhFH8gm4z8YtYeQ==",
   "success": true,
   "projectFilePath": "D:\\Workspace\\.NET\\GoalVegan\\GoalVegan.Application\\GoalVegan.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\wende\\.nuget\\packages\\fluentvalidation\\10.3.3\\fluentvalidation.10.3.3.nupkg.sha512",
+    "C:\\Users\\wende\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.3.3\\fluentvalidation.aspnetcore.10.3.3.nupkg.sha512",
+    "C:\\Users\\wende\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.3.3\\fluentvalidation.dependencyinjectionextensions.10.3.3.nupkg.sha512",
     "C:\\Users\\wende\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\wende\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\wende\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

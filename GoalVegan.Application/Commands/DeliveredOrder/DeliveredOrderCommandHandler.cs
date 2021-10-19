@@ -17,13 +17,13 @@ namespace GoalVegan.Application.Commands.DeliveredOrder
 
         public DeliveredOrderCommandHandler(IOrderRepository orderRepository)
         {
-            _orderRepository = orderRepository
+            _orderRepository = orderRepository;
         }
 
         public async Task<Unit> Handle(DeliveredOrderCommand request, CancellationToken cancellationToken)
         {
             var order = await _orderRepository.GetOrderById(request.Id);
-            order.DeliveredOrder()
+            order.DeliveredOrder();
 
             return Unit.Value;
         }

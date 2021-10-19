@@ -1,0 +1,17 @@
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\obj\Debug\net5.0\GoalVegan.Application.csproj.AssemblyReference.cache
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\obj\Debug\net5.0\GoalVegan.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\obj\Debug\net5.0\GoalVegan.Application.AssemblyInfoInputs.cache
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\obj\Debug\net5.0\GoalVegan.Application.AssemblyInfo.cs
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\obj\Debug\net5.0\GoalVegan.Application.csproj.CoreCompileInputs.cache
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\bin\Debug\net5.0\GoalVegan.Application.deps.json
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\bin\Debug\net5.0\GoalVegan.Application.dll
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\bin\Debug\net5.0\ref\GoalVegan.Application.dll
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\bin\Debug\net5.0\GoalVegan.Application.pdb
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\bin\Debug\net5.0\GoalVegan.Core.dll
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\bin\Debug\net5.0\GoalVegan.Infrastructure.dll
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\bin\Debug\net5.0\GoalVegan.Core.pdb
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\bin\Debug\net5.0\GoalVegan.Infrastructure.pdb
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\obj\Debug\net5.0\GoalVegan.Application.csproj.CopyComplete
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\obj\Debug\net5.0\GoalVegan.Application.dll
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\obj\Debug\net5.0\ref\GoalVegan.Application.dll
+D:\Workspace\.NET\GoalVegan\GoalVegan.Application\obj\Debug\net5.0\GoalVegan.Application.pdb

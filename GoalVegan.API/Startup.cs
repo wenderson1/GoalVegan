@@ -1,4 +1,8 @@
+using FluentValidation.AspNetCore;
+using GoalVegan.Application.Validators;
+using GoalVegan.Core.Repositories;
 using GoalVegan.Infrastructure.Persistence;
+using GoalVegan.Infrastructure.Persistence.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,10 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using FluentValidation;
 
 namespace GoalVegan.API
 {
@@ -32,7 +33,14 @@ namespace GoalVegan.API
             var connectionString = Configuration.GetConnectionString("GoalVeganCs");
             services.AddDbContext<GoalVeganDbContext>(options => options.UseSqlServer(connectionString));
 
-            services.AddControllers();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IBuyerRepository, BuyerRepository>();
+            services.AddScoped<ISellerRepository, SellerRepository>();
+
+            services.AddControllers()
+                .AddFluentValidation(fv=>fv.RegisterValidatorsFromAssemblyContaining<CreateSellerCommandValidator>());
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GoalVegan.API", Version = "v1" });
