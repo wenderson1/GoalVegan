@@ -15,6 +15,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using FluentValidation;
+using GoalVegan.Application.Commands.CreateProduct;
+using MediatR;
+using GoalVegan.API.Filters;
 
 namespace GoalVegan.API
 {
@@ -38,8 +41,10 @@ namespace GoalVegan.API
             services.AddScoped<IBuyerRepository, BuyerRepository>();
             services.AddScoped<ISellerRepository, SellerRepository>();
 
-            services.AddControllers()
+            services.AddControllers(options => options.Filters.Add(typeof(ValidationFilter)))
                 .AddFluentValidation(fv=>fv.RegisterValidatorsFromAssemblyContaining<CreateSellerCommandValidator>());
+
+            services.AddMediatR(typeof(CreateProductCommand));
 
             services.AddSwaggerGen(c =>
             {

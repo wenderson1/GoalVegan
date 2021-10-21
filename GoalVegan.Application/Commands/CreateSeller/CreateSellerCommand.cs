@@ -9,6 +9,18 @@ namespace GoalVegan.Application.Commands.CreateSeller
 {
    public class CreateSellerCommand : IRequest<int>
     {
+        public CreateSellerCommand(string email, string password, string phoneNumber, string realName, string fantasyName, string document, string stateRegister, string pixKey)
+        {
+            Email = email;
+            Password = password;
+            PhoneNumber = phoneNumber;
+            RealName = realName;
+            FantasyName = fantasyName;
+            Document = document;
+            StateRegister = stateRegister;
+            PixKey = pixKey;
+        }
+
         public string Email { get; set; }
         public string Password { get; set; }
         public string PhoneNumber { get; set; }

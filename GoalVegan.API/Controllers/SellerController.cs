@@ -1,7 +1,9 @@
 ﻿
+using GoalVegan.Application.Commands.CreateSeller;
 using GoalVegan.Application.InputModel;
 using GoalVegan.Application.InputModel.Seller;
 using GoalVegan.Application.Queries.GetSeller;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,8 +15,12 @@ namespace GoalVegan.API.Controllers
     [Route("api/sellers")]
     public class SellerController : ControllerBase
     {
-        private readonly IMediatR _mediator;
-        public SellerController(MediatR _medi)
+        private readonly IMediator _mediator;
+
+        public SellerController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
 
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
@@ -23,19 +29,10 @@ namespace GoalVegan.API.Controllers
         }
 
         [HttpPost]
-        public async  IActionResult Post([FromBody] CreateSellerInputModel createSellerModel)
+        public async Task<IActionResult> Post([FromBody] CreateSellerCommand command)
         {
-            if (!ModelState.IsValid)
-            {
-                var messages = ModelState
-                    .SelectMany(ms => ms.Value.Errors)
-                    .Select(e => e.ErrorMessage)
-                    .ToList();
-
-                return BadRequest(messages);
-            }
             var id = await _mediator.Send(command);
-            return CreatedAtAction(nameof(GetById), new { id = id }, createSellerModel);
+            return CreatedAtAction(nameof(GetById), new { id = id }, command);
         }
 
         [HttpPut("{id}")]

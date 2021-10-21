@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AcSKbDxi2R95yzNJMFQX/fmkpM5+AVsCI1saAKJ++aCt6h9oCMJ0BAWEdd+8ACMimfT1HVFfgB6E4AjlpBVn+A==",
+  "dgSpecHash": "HviQ0nCiekQHESvMd4h6DYOMkMRVFGJD2bcTjItE3yaz21dM22q/3sKiMKXlxo8QARO5MWbiiMW1UsgRtsEEdA==",
   "success": true,
   "projectFilePath": "D:\\Workspace\\.NET\\GoalVegan\\GoalVegan.API\\GoalVegan.API.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\wende\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.3.3\\fluentvalidation.dependencyinjectionextensions.10.3.3.nupkg.sha512",
     "C:\\Users\\wende\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\wende\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\wende\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\wende\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\wende\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\wende\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
