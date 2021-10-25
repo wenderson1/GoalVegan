@@ -10,5 +10,10 @@ namespace GoalVegan.Application.Commands.DeleteBuyer
   public class DeleteBuyerCommand:IRequest<Unit>
     {
         public int Id { get; private set; }
+
+        public DeleteBuyerCommand(int id)
+        {
+            Id = id;
+        }
     }
 }

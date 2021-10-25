@@ -9,6 +9,11 @@ namespace GoalVegan.Application.Commands.CancelOrder
 {
     public class CancelOrderCommand  : IRequest<Unit>
     {
+        public CancelOrderCommand(int id)
+        {
+            Id = id;
+        }
+
         public int Id { get; private set; }
     }
 }

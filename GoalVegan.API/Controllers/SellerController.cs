@@ -1,5 +1,7 @@
 ﻿
 using GoalVegan.Application.Commands.CreateSeller;
+using GoalVegan.Application.Commands.DeleteSeller;
+using GoalVegan.Application.Commands.UpdateSeller;
 using GoalVegan.Application.InputModel;
 using GoalVegan.Application.InputModel.Seller;
 using GoalVegan.Application.Queries.GetSeller;
@@ -23,9 +25,14 @@ namespace GoalVegan.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            return Ok();
+            var query = new GetSellerByIdQuery(id);
+            var seller = await _mediator.Send(query);
+
+            if (seller == null) return NotFound();
+
+            return Ok(seller);
         }
 
         [HttpPost]
@@ -36,30 +43,17 @@ namespace GoalVegan.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] UpdateSellerInputModel updateSellerModel)
+        public async Task<IActionResult> Put(int id, [FromBody] UpdateSellerCommand command)
         {
-            if (updateSellerModel.Email.Length > 30)
-            {
-                return BadRequest();
-            }
+            await _mediator.Send(command);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            return NoContent();
-        }
-
-        [HttpPut("{id}/order/{idOrder}")]
-        public IActionResult AddBalance(int id, int idOrder)
-        {
-            return NoContent();
-        }
-
-        [HttpPut("{id}/payment/{idOrder}")]
-        public IActionResult PaymentSeller(int id)
-        {
+            var command = new DeleteSellerCommand(id);
+            await _mediator.Send(command);
             return NoContent();
         }
 
