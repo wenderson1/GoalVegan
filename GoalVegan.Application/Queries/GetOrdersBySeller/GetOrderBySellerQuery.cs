@@ -10,6 +10,11 @@ namespace GoalVegan.Application.Queries.GetOrdersBySeller
 {
     public class GetOrderBySellerQuery : IRequest<List<Order>>
     {
+        public GetOrderBySellerQuery(int idSeller)
+        {
+            IdSeller = idSeller;
+        }
+
         public int IdSeller { get; private set; }
     }
 }

@@ -3,8 +3,9 @@ using GoalVegan.Application.Commands.CreateBuyer;
 using GoalVegan.Application.Commands.CreateOrder;
 using GoalVegan.Application.Commands.DeleteBuyer;
 using GoalVegan.Application.Commands.UpdateBuyer;
-using GoalVegan.Application.InputModel;
 using GoalVegan.Application.InputModel.Buyer;
+using GoalVegan.Application.Queries.GetOrder;
+using GoalVegan.Application.Queries.GetOrdersByBuyer;
 using GoalVegan.Application.Queries.GetUser;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -72,9 +73,27 @@ namespace GoalVegan.API.Controllers
         }
 
         [HttpGet("{id}/orders")]
-        public async Task<IActionResult> GetOrders()
+        public async Task<IActionResult> GetOrders(int idBuyer)
         {
+            var getOrdersByBuyerQuery = new GetOrdersByBuyerQuery(idBuyer);
+            var orders = await _mediator.Send(getOrdersByBuyerQuery);
 
+            return Ok(orders);
+        }
+
+        [HttpGet("{id}/order/{orderId}")]
+        public async Task<IActionResult> GetOrderById(int id)
+        {
+            var getOrderBuyerQuery = new GetOrderBuyerQuery(id);
+            var orders = await _mediator.Send(getOrderBuyerQuery);
+
+            return Ok(orders);
+        }
+
+        [HttpPut("{id}/login")]
+        public IActionResult Login(int id, [FromBody] BuyerLoginModel login)
+        {
+            return NoContent();
         }
     }
 }

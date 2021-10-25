@@ -9,6 +9,11 @@ namespace GoalVegan.Application.Commands.DeliveredOrder
 {
     public class DeliveredOrderCommand:IRequest<Unit>
     {
+        public DeliveredOrderCommand(int id)
+        {
+            Id = id;
+        }
+
         public int Id { get; private set; }
     }
 }

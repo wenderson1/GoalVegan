@@ -9,6 +9,11 @@ namespace GoalVegan.Application.Commands.SentOrder
 {
     public class SentOrderCommand : IRequest<Unit>
     {
+        public SentOrderCommand(int id)
+        {
+            Id = id;
+        }
+
         public int Id { get; private set; }
     }
 }

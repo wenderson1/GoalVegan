@@ -76,3 +76,4 @@ D:\Workspace\.NET\GoalVegan\GoalVegan.API\bin\Debug\net5.0\FluentValidation.dll
 D:\Workspace\.NET\GoalVegan\GoalVegan.API\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
 D:\Workspace\.NET\GoalVegan\GoalVegan.API\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
 D:\Workspace\.NET\GoalVegan\GoalVegan.API\obj\Debug\net5.0\GoalVegan.API.MvcApplicationPartsAssemblyInfo.cs
+D:\Workspace\.NET\GoalVegan\GoalVegan.API\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll

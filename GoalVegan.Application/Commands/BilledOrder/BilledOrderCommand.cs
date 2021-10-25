@@ -9,6 +9,11 @@ namespace GoalVegan.Application.Commands
 {
     public class BilledOrderCommand : IRequest<Unit>
     {
+        public BilledOrderCommand(int id)
+        {
+            Id = id;
+        }
+
         public int Id { get; private set; }
         public string? InvoiceNumber { get; private set; }
         public string? KeyAcess { get; private set; }
