@@ -8,7 +8,7 @@ namespace GoalVegan.Application.InputModel
 {
    public class CreateSellerInputModel
     {
-        public CreateSellerInputModel(string email, string password, string phoneNumber, string realName, string fantasyName, string document, string stateRegister, string pixKey)
+        public CreateSellerInputModel(string email, string password, string phoneNumber, string realName, string fantasyName, string document, string stateRegister, string pixKey, string role)
         {
             Email = email;
             Password = password;
@@ -18,6 +18,7 @@ namespace GoalVegan.Application.InputModel
             Document = document;
             StateRegister = stateRegister;
             PixKey = pixKey;
+            Role = role;
         }
 
         public string Email { get; private set; }
@@ -28,6 +29,7 @@ namespace GoalVegan.Application.InputModel
         public string Document { get; private set; }
         public string StateRegister { get; private set; }
         public string PixKey { get; private set; }
+        public string Role { get; private set; }
 
     }
 }

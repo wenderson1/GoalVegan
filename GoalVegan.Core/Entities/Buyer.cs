@@ -11,16 +11,18 @@ namespace GoalVegan.Core.Entities
         public int Id { get; private set; }
         public string Email { get; private set; }
         public string Password { get; private set; }
+        public string Role { get; private set; }
         public string PhoneNumber { get; private set; }
         public string Document { get; private set; }
         public int IdOrder { get; private set; }
         public List<Order> Orders { get; private set; }
        
 
-        public Buyer(string email, string password, string phoneNumber, string document) : base()
+        public Buyer(string email, string password, string phoneNumber, string document,string role) : base()
         {
             Email = email;
             Password = password;
+            Role = Role;
             PhoneNumber = phoneNumber;
             Document = document;
         }

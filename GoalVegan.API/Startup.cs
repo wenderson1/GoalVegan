@@ -18,6 +18,8 @@ using FluentValidation;
 using GoalVegan.Application.Commands.CreateProduct;
 using MediatR;
 using GoalVegan.API.Filters;
+using GoalVegan.Infrastructure.AuthService;
+using GoalVegan.Core.Services;
 
 namespace GoalVegan.API
 {
@@ -40,6 +42,7 @@ namespace GoalVegan.API
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IBuyerRepository, BuyerRepository>();
             services.AddScoped<ISellerRepository, SellerRepository>();
+            services.AddScoped<IAuthService, AuthService>();
 
             services.AddControllers(options => options.Filters.Add(typeof(ValidationFilter)))
                 .AddFluentValidation(fv=>fv.RegisterValidatorsFromAssemblyContaining<CreateSellerCommandValidator>());

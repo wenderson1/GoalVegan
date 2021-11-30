@@ -9,7 +9,7 @@ namespace GoalVegan.Application.Commands.CreateSeller
 {
    public class CreateSellerCommand : IRequest<int>
     {
-        public CreateSellerCommand(string email, string password, string phoneNumber, string realName, string fantasyName, string document, string stateRegister, string pixKey)
+        public CreateSellerCommand(string email, string password, string phoneNumber, string realName, string fantasyName, string document, string stateRegister, string pixKey, string role)
         {
             Email = email;
             Password = password;
@@ -19,6 +19,7 @@ namespace GoalVegan.Application.Commands.CreateSeller
             Document = document;
             StateRegister = stateRegister;
             PixKey = pixKey;
+            Role = role;
         }
 
         public string Email { get; set; }
@@ -29,5 +30,6 @@ namespace GoalVegan.Application.Commands.CreateSeller
         public string Document { get; set; }
         public string StateRegister { get; set; }
         public string PixKey { get; set; }
+        public string Role { get; private set; }
     }
 }

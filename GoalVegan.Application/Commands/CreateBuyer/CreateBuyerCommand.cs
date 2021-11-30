@@ -14,5 +14,6 @@ namespace GoalVegan.Application.Commands.CreateBuyer
         public string Password { get; private set; }
         public string PhoneNumber { get; private set; }
         public string Document { get; private set; }
+        public string Role { get; private set; }
     }
 }

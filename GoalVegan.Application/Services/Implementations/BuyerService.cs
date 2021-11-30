@@ -23,7 +23,7 @@ namespace GoalVegan.Application.Services.Implementations
 
         public int Create(CreateBuyerInputModel inputModel)
         {
-            var buyer = new Buyer(inputModel.Email, inputModel.Password, inputModel.PhoneNumber, inputModel.CPF);
+            var buyer = new Buyer(inputModel.Email, inputModel.Password, inputModel.PhoneNumber, inputModel.CPF, inputModel.Role);
 
             _dbContext.Buyers.Add(buyer);
             _dbContext.SaveChanges();

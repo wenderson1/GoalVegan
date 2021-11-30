@@ -31,8 +31,9 @@ namespace GoalVegan.Application.Services.Implementations
                inputModel.FantasyName,
                inputModel.Document,
                inputModel.StateRegister,
-               inputModel.PixKey
-                );
+               inputModel.PixKey,
+               inputModel.Role
+                ) ;
 
             _dbContext.Add(seller);
             _dbContext.SaveChanges();
