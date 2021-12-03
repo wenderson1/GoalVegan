@@ -14,5 +14,6 @@ namespace GoalVegan.Core.Repositories
         Task AddBuyerAsync(Buyer buyer);
         Task UpdateBuyerAsync(Buyer buyer);
         Task SaveChangesAsync();
+        Task<Buyer> GetBuyerByEmailandPasswordAsync(string email, string passwordHash);
     }
 }

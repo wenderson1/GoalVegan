@@ -1,4 +1,6 @@
-﻿using GoalVegan.Infrastructure.Persistence;
+﻿using GoalVegan.Core.Entities;
+using GoalVegan.Core.Services;
+using GoalVegan.Infrastructure.Persistence;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -12,15 +14,26 @@ namespace GoalVegan.Application.Commands.CreateBuyer
     public class CreateBuyerCommandHandler : IRequestHandler<CreateBuyerCommand, int>
     {
         private readonly GoalVeganDbContext _dbContext;
+        private readonly IAuthService _authService;
 
-        public CreateBuyerCommandHandler(GoalVeganDbContext dbContext)
+        public CreateBuyerCommandHandler(GoalVeganDbContext dbContext, IAuthService authService)
         {
             _dbContext = dbContext;
+            _authService = authService;
         }
 
-        public Task<int> Handle(CreateBuyerCommand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(CreateBuyerCommand request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var passwordHash = _authService.ComputeSha256Hash(request.Password);
+
+            var buyer = new Buyer(request.Email, request.Password, request.PhoneNumber, request.Document, request.Role);
+
+            await _dbContext.Buyers.AddAsync(buyer);
+
+            await _dbContext.SaveChangesAsync();
+
+            return buyer.Id;
         }
     }
 }
+

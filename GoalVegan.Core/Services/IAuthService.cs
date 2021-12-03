@@ -10,6 +10,7 @@ namespace GoalVegan.Core.Services
     {
 
         string GenerateJwtToken(string email, string role);
+        string ComputeSha256Hash(string password);
 
     }
 }

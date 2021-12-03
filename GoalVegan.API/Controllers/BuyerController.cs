@@ -2,6 +2,7 @@
 using GoalVegan.Application.Commands.CreateBuyer;
 using GoalVegan.Application.Commands.CreateOrder;
 using GoalVegan.Application.Commands.DeleteBuyer;
+using GoalVegan.Application.Commands.LoginUser;
 using GoalVegan.Application.Commands.UpdateBuyer;
 using GoalVegan.Application.InputModel.Buyer;
 using GoalVegan.Application.Queries.GetOrder;
@@ -91,9 +92,16 @@ namespace GoalVegan.API.Controllers
         }
 
         [HttpPut("{id}/login")]
-        public IActionResult Login(int id, [FromBody] BuyerLoginModel login)
+        public async Task<IActionResult> Login([FromBody] LoginBuyerCommand command)
         {
-            return NoContent();
+            var loginUserViewModel = await _mediator.Send(command);
+
+            if (loginUserViewModel == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(loginUserViewModel);
         }
     }
 }

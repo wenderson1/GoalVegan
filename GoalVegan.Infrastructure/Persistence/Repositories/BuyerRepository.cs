@@ -23,6 +23,13 @@ namespace GoalVegan.Infrastructure.Persistence.Repositories
             throw new NotImplementedException();
         }
 
+        public async Task<Buyer> GetBuyerByEmailandPasswordAsync(string email, string passwordHash)
+        {
+            return await _dbContext.
+                Buyers.
+                SingleOrDefaultAsync(u => u.Email == email && u.Password == passwordHash);
+        }
+
         public async Task<Buyer> GetById(int id)
         {
             return await _dbContext.Buyers.SingleOrDefaultAsync(b => b.Id == id);
