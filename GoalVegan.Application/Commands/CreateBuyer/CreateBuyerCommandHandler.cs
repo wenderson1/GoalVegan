@@ -26,7 +26,7 @@ namespace GoalVegan.Application.Commands.CreateBuyer
         {
             var passwordHash = _authService.ComputeSha256Hash(request.Password);
 
-            var buyer = new Buyer(request.Email, request.Password, request.PhoneNumber, request.Document, request.Role);
+            var buyer = new Buyer(request.Email, passwordHash, request.PhoneNumber, request.Document, request.Role);
 
             await _dbContext.Buyers.AddAsync(buyer);
 

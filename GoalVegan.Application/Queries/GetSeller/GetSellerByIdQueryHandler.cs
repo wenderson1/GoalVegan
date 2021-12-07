@@ -16,6 +16,11 @@ namespace GoalVegan.Application.Queries.GetSeller
     {
         private readonly ISellerRepository _sellerRepository;
 
+        public GetSellerByIdQueryHandler(ISellerRepository sellerRepository)
+        {
+            _sellerRepository = sellerRepository;
+        }
+
         public async Task<SellerDetailsViewModel> Handle(GetSellerByIdQuery request, CancellationToken cancellationToken)
         {
             var seller = await _sellerRepository.GetSellerById(request.Id);

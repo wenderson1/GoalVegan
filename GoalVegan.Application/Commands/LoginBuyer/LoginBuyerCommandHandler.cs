@@ -27,7 +27,7 @@ namespace GoalVegan.Application.Commands.LoginUser
             //utilizar o mesmo algoritmo para criar o hash dessa senha
             var passwordHash = _authService.ComputeSha256Hash(request.Password);
 
-            //buscar no bd um user que tenha meu emai e minha senha em formato hash
+            //buscar no bd um user que tenha meu email e minha senha em formato hash
             var buyer = await _buyerRepository.GetBuyerByEmailandPasswordAsync(request.Email, passwordHash);
 
             //se nao existir, erro no login

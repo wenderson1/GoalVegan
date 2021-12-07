@@ -27,7 +27,7 @@ namespace GoalVegan.Infrastructure.Persistence.Repositories
         {
             return await _dbContext.
                 Buyers.
-                SingleOrDefaultAsync(u => u.Email == email && u.Password == passwordHash);
+                SingleOrDefaultAsync(b => b.Email == email && b.Password == passwordHash);
         }
 
         public async Task<Buyer> GetById(int id)

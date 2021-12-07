@@ -148,7 +148,7 @@ namespace GoalVegan.API.Controllers
         }
 
         [HttpPut("{id}/deleteProduct/{idProduct}")]
-        public async Task<IActionResult> deleteProduct(int id)
+        public async Task<IActionResult> DeleteProduct(int id)
         {
             var command = new DeleteProductCommand(id);
             await _mediator.Send(command);
@@ -156,9 +156,14 @@ namespace GoalVegan.API.Controllers
         }
 
         [HttpPut("{id}/login")]
-        public IActionResult Login(int id, [FromBody] SellerLoginModel login)
+        public async Task<IActionResult> Login([FromBody] SellerLoginModel command)
         {
-            return NoContent();
+            var sellerLoginViewModel = await _mediator.Send(command);
+
+            if (sellerLoginViewModel == null)
+                return BadRequest("Usuário não encontrado");
+
+            return Ok(sellerLoginViewModel);
         }
     }
 }
