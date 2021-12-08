@@ -34,7 +34,6 @@ D:\Workspace\.NET\GoalVegan\GoalVegan.API\bin\Debug\net5.0\Microsoft.IdentityMod
 D:\Workspace\.NET\GoalVegan\GoalVegan.API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Workspace\.NET\GoalVegan\GoalVegan.API\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 D:\Workspace\.NET\GoalVegan\GoalVegan.API\bin\Debug\net5.0\Microsoft.OpenApi.dll
-D:\Workspace\.NET\GoalVegan\GoalVegan.API\bin\Debug\net5.0\Newtonsoft.Json.dll
 D:\Workspace\.NET\GoalVegan\GoalVegan.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Workspace\.NET\GoalVegan\GoalVegan.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Workspace\.NET\GoalVegan\GoalVegan.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -77,3 +76,4 @@ D:\Workspace\.NET\GoalVegan\GoalVegan.API\obj\Debug\net5.0\GoalVegan.API.dll
 D:\Workspace\.NET\GoalVegan\GoalVegan.API\obj\Debug\net5.0\ref\GoalVegan.API.dll
 D:\Workspace\.NET\GoalVegan\GoalVegan.API\obj\Debug\net5.0\GoalVegan.API.pdb
 D:\Workspace\.NET\GoalVegan\GoalVegan.API\obj\Debug\net5.0\GoalVegan.API.genruntimeconfig.cache
+D:\Workspace\.NET\GoalVegan\GoalVegan.API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
