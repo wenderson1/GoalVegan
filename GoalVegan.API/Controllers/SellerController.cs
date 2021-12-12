@@ -17,6 +17,7 @@ using GoalVegan.Application.Queries.GetProduct;
 using GoalVegan.Application.Queries.GetProductsBySeller;
 using GoalVegan.Application.Queries.GetSeller;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,7 @@ using System.Threading.Tasks;
 namespace GoalVegan.API.Controllers
 {
     [Route("api/sellers")]
+    [Authorize(Roles = "seller")]
     public class SellerController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -47,6 +49,7 @@ namespace GoalVegan.API.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Post([FromBody] CreateSellerCommand command)
         {
             var id = await _mediator.Send(command);
@@ -155,7 +158,9 @@ namespace GoalVegan.API.Controllers
             return NoContent();
         }
 
+        
         [HttpPut("{id}/login")]
+        [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] SellerLoginModel command)
         {
             var sellerLoginViewModel = await _mediator.Send(command);

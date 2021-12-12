@@ -1,6 +1,7 @@
 ﻿using GoalVegan.Application.Queries.GetAllProducts;
 using GoalVegan.Application.Queries.GetProduct;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace GoalVegan.API.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> Get(string query)
         {
             var getAllProductsQuery = new GetAllProductsQuery(query);
@@ -29,6 +31,7 @@ namespace GoalVegan.API.Controllers
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult>GetById(int id)
         {
             var getProductByIdQuery = new GetProductByIdQuery(id);

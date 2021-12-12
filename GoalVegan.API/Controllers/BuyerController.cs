@@ -9,12 +9,14 @@ using GoalVegan.Application.Queries.GetOrder;
 using GoalVegan.Application.Queries.GetOrdersByBuyer;
 using GoalVegan.Application.Queries.GetUser;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace GoalVegan.API.Controllers
 {
     [Route("api/buyers")]
+    [Authorize(Roles = "buyer")]
     public class BuyerController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -37,6 +39,7 @@ namespace GoalVegan.API.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Post([FromBody] CreateBuyerCommand command, IMediator mediator)
         {
             var id = await _mediator.Send(command);
@@ -92,6 +95,7 @@ namespace GoalVegan.API.Controllers
         }
 
         [HttpPut("{id}/login")]
+        [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] LoginBuyerCommand command)
         {
             var loginUserViewModel = await _mediator.Send(command);
