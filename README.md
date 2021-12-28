@@ -13,7 +13,7 @@ GoalVegan é uma de marketplace focado em pessoas veganas, estou usando para fix
 * FluentValidations para validações dos commands
 * Testes Unitários com XUnit e Moq
 
-##Features
+## Features
 * CRUD de Buyers(Compradores) e Vendedores(Sellers), usuários do sistema, são usuários diferentes na API, cada um possui seu login especifíco
 * CRUD de Produtos, que só pode ser feito pelo Seller
 * Criação e leitura de pedidos, somente o Buyer consegue criar o pedido e fazer algumas atualizações, vendedores conseguem atualizar para Enviado, Faturado, e código de rastreio
